@@ -1,6 +1,7 @@
 # Third Party
 from flask import Flask
 from flask import render_template, redirect, request, flash, session, url_for, jsonify
+from flask_socketio import SocketIO, emit
 
 # Classes
 from classes.database import Database
@@ -14,6 +15,7 @@ app.secret_key = 'visionbeta'
 
 # MySQL connection
 db = Database()
+socketio = SocketIO(app)
 
 @app.route('/', methods=['GET'])
 def start():
@@ -66,10 +68,24 @@ def show_client(client_id):
     heartbeats = Client.getHeartbeats(client_id)
     return render_template('client/client_show.html', client=client, logs=logs, heartbeats=heartbeats)
 
+@socketio.on('heartbeat')
+def handle_heartbeat(json):
+    print('received json: ' + str(json))
+
+@socketio.on('connect')
+def client_online():
+    client_id = request.args['client_id']
+    Client.setOnline(client_id)
+
+@socketio.on('disconnect')
+def client_offline():
+    client_id = request.args['client_id']
+    Client.setOffline(client_id)
+
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/')
 
 if __name__ == '__main__':
-    app.run()
+    socketio.run(app)

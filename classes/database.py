@@ -27,6 +27,10 @@ class Database:
 
     def insert(self, query, values = []):
         status = self.cursor.execute(query, values)
-        print(status)
+        self.connection.commit()
+        return True
+
+    def update(self, query, values = []):
+        status = self.cursor.execute(query, values)
         self.connection.commit()
         return True

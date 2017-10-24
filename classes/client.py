@@ -29,6 +29,14 @@ class Client:
         return self.db.fetchOne("SELECT * FROM clients WHERE client_id = %s", [self.client_id])
 
     @staticmethod
+    def setOnline(client_id):
+        return Database().update("UPDATE clients SET status = 1 WHERE client_id = %s", [client_id])
+
+    @staticmethod
+    def setOffline(client_id):
+        return Database().update("UPDATE clients SET status = 0 WHERE client_id = %s", [client_id])
+
+    @staticmethod
     def all():
         return Database().fetchAll("SELECT * FROM clients")
 
