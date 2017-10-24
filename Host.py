@@ -7,7 +7,6 @@ from flask_socketio import SocketIO, emit
 from classes.database import Database
 from classes.user import User
 from classes.client import Client
-from classes.heartbeat import Heartbeat
 
 # Config
 app = Flask(__name__)
@@ -43,14 +42,6 @@ def do_login():
     else:
         return redirect(url_for('.start', messages='Foutief wachtwoord'))
 
-@app.route('/heartbeat', methods=['POST'])
-def heartbeat():
-    # Form Input
-    client_id = request.form['client']
-    heartbeat = Heartbeat(client_id)
-    heartbeat.add()
-    return jsonify({'status': 'success'})
-
 @app.route('/client/add', methods=['GET', 'POST'])
 def add_client_view():
     if request.method == 'GET':
@@ -65,12 +56,7 @@ def add_client_view():
 def show_client(client_id):
     client = Client.get(client_id)
     logs = Client.getLogs(client_id)
-    heartbeats = Client.getHeartbeats(client_id)
-    return render_template('client/client_show.html', client=client, logs=logs, heartbeats=heartbeats)
-
-@socketio.on('heartbeat')
-def handle_heartbeat(json):
-    print('received json: ' + str(json))
+    return render_template('client/client_show.html', client=client, logs=logs)
 
 @socketio.on('connect')
 def client_online():

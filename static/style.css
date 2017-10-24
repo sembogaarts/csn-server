@@ -111,3 +111,30 @@ a {
     cursor: pointer;
     color: #F44336;
 }
+
+.online,
+.offline {
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.online {
+    background-color: #5fcf80;
+}
+
+.offline {
+    background-color: #F44336;
+}
+
+.main-footer {
+    color: #E0E0E0;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 90%;
+    }
+}

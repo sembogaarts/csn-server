@@ -18,18 +18,34 @@
 
                         <h2 class="title">
                             {{ client['name'] }}
-                            <i class="fa fa-stop right" aria-hidden="true"></i>
-                            <i class="fa fa-play right" aria-hidden="true"></i>
                         </h2>
                         <table>
                             <tbody>
                             <tr>
                                 <td><h3>Code: {{ client['client_id'] }}</h3></td>
-                                <td><h3>Hartslag: 2 min geleden</h3></td>
+                                <td><h3>Logs: 40</h3></td>
                             </tr>
                             <tr>
-                                <td><h3>Status: {{ client['status'] }}</h3></td>
-                                <td><h3>Logs: 40</h3></td>
+                                <td>
+                                    <h3>
+                                        Status:
+                                        {% if client['online'] == 0 %}
+                                            <span class="offline">Offline</span>
+                                        {% else %}
+                                            <span class="online">Online</span>
+                                        {% endif %}
+                                    </h3>
+                                </td>
+                                <td>
+                                    <h3>
+                                        Modus:
+                                        {% if client['online'] == 0 %}
+                                            <span>Gepauzeerd</span>
+                                        {% else %}
+                                            <span>Actief</span>
+                                        {% endif %}
+                                    </h3>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
