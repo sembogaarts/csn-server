@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="cards">
+
+        {% if clients %}
+
+            {% for client in clients %}
+
+                <div class="card">
+                  <h2 class="title">{{ client['name'] }}</h2>
+                    <h3>Code: {{ client['client_id'] }}</h3>
+                    <h3>Status: Actief</h3>
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="card">
+                <h2 class="title">Geen clients gevonden</h2>
+            </div>
+
+        {% endif %}
+
+
+    </div>
+
+{% endblock %}
