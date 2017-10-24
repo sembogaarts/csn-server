@@ -1,6 +1,6 @@
 # Third Party
 from flask import Flask
-from flask import render_template, redirect, request, flash, session, url_for
+from flask import render_template, redirect, request, flash, session, url_for, jsonify
 
 # Classes
 from classes.database import Database
@@ -18,7 +18,7 @@ db = Database()
 @app.route('/', methods=['GET'])
 def start():
     if User.isLoggedIn():
-        clients = db.fetchAll("SELECT * FROM clients")
+        clients = Client.all()
         return render_template('dashboard.html', clients=clients)
     else:
         return render_template('login.html')
@@ -47,14 +47,24 @@ def heartbeat():
     client_id = request.form['client']
     heartbeat = Heartbeat(client_id)
     heartbeat.add()
-    return str({'status': 'success'})
+    return jsonify({'status': 'success'})
 
-@app.route('/client', methods=['POST'])
-def register_client():
-    name = request.form['name']
-    client = Client(name)
-    client.add()
-    return str({'status': 'success'})
+@app.route('/client/add', methods=['GET', 'POST'])
+def add_client_view():
+    if request.method == 'GET':
+        return render_template('client/client_add.html')
+    else:
+        name = request.form['name']
+        client = Client(name)
+        row = client.add()
+        return jsonify(row)
+
+@app.route('/client/<client_id>', methods=['GET'])
+def show_client(client_id):
+    client = Client.get(client_id)
+    logs = Client.getLogs(client_id)
+    heartbeats = Client.getHeartbeats(client_id)
+    return render_template('client/client_show.html', client=client, logs=logs, heartbeats=heartbeats)
 
 @app.route('/logout')
 def logout():

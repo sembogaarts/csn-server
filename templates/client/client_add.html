@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="card">
+
+            <div data-step="1">
+                <form id="clientAdd">
+                    <input required type="text" name="name">
+                    <input type="submit">
+                </form>
+            </div>
+
+            <div style="display: none;" data-step="2">
+                <h1></h1>
+                <p>Vul deze code in op '<span></span>'</p>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

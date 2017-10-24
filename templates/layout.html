@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{{ url_for('static', filename='global.js') }}"></script>
 </head>
 <body>
 
     <div class="main-header">
-        <div class="title">VISION<sup>BETA</sup></div>
+        <a href="/">
+            <div class="title">VISION<sup>BETA</sup></div>
+        </a>
     </div>
 
     {% block content %}

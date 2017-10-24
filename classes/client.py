@@ -25,3 +25,21 @@ class Client:
                 unique = True
 
         self.db.insert("INSERT INTO clients (`name`, `client_id`) VALUES (%s, %s)", [self.name, self.client_id])
+
+        return self.db.fetchOne("SELECT * FROM clients WHERE client_id = %s", [self.client_id])
+
+    @staticmethod
+    def all():
+        return Database().fetchAll("SELECT * FROM clients")
+
+    @staticmethod
+    def get(client_id):
+        return Database().fetchOne("SELECT * FROM clients WHERE client_id = %s", [client_id])
+
+    @staticmethod
+    def getLogs(client_id):
+        return Database().fetchOne("SELECT * FROM logs WHERE client_id = %s", [client_id])
+
+    @staticmethod
+    def getHeartbeats(client_id):
+        return Database().fetchOne("SELECT * FROM heartbeats WHERE client_id = %s", [client_id])
