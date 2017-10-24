@@ -44,7 +44,7 @@ def do_login():
 @app.route('/heartbeat', methods=['POST'])
 def heartbeat():
     # Form Input
-    client_id = request.form['client_id']
+    client_id = request.form['client']
     heartbeat = Heartbeat(client_id)
     heartbeat.add()
     return str({'status': 'success'})
