@@ -20,7 +20,7 @@ socketio = SocketIO(app)
 
 # Init
 alarm = Alarm()
-alarm.start()
+alarm.boot()
 
 
 @app.route('/', methods=['GET'])

@@ -29,11 +29,5 @@ class Light:
         GPIO.output(light, False)
         self.state = False
 
-    def toggle(self, light):
-        if light.state:
-            light.off()
-        else:
-            light.on()
-
     def clear(self):
         GPIO.cleanup()
