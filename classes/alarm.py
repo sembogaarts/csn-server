@@ -36,8 +36,11 @@ class Alarm:
         # Check if all the clients are online
         if self.clientsAreOnline():
             self.stop()
-            self.retryTimer.cancel()
-            self.light.off(self.light.yellow)
+            try:
+                self.retryTimer.cancel()
+                self.light.off(self.light.yellow)
+            except:
+                print('No instance')
             self.light.on(self.light.green)
         else:
             # Retry in 10 seconds before running the alarm...
