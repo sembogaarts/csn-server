@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af8a7a1-e26b-4f68-8e09-093c4b7a5f20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Host.py" afterPath="$PROJECT_DIR$/Host.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/alarm.py" afterPath="$PROJECT_DIR$/classes/alarm.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/Host.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Host.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Host.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Host.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
@@ -48,6 +50,16 @@
               <folding>
                 <element signature="e#14#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,6 +164,7 @@
         <option value="$PROJECT_DIR$/classes/buzzer.py" />
         <option value="$PROJECT_DIR$/classes/alarm.py" />
         <option value="$PROJECT_DIR$/Host.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -188,16 +201,6 @@
             <path>
               <item name="Host" type="b2602c69:ProjectViewProjectNode" />
               <item name="Host" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Host" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Host" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Host" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Host" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -557,6 +560,14 @@
           <folding>
             <element signature="e#14#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
