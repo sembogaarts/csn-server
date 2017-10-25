@@ -21,14 +21,17 @@ class Alarm:
         self.heartbeat.start()
 
     def check(self):
+        print('Checking clients...')
         self.danger = False
         self.clients = Client.all()
         for client in self.clients:
             if client['online'] == 0:
+                print('CLIENT ' + client['name'] + ' IS OFFLINE!')
                 self.danger = True
         if self.danger:
             self.start()
         else:
+            print('All systems are neutral')
             self.stop()
 
 
