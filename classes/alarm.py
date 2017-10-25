@@ -19,7 +19,7 @@ class Alarm:
 
         scheduler = BlockingScheduler()
 
-        alarmSwitch = scheduler.add_job(self.check(), 'interval', seconds=5)
+        alarmSwitch = scheduler.add_job(self.check, 'interval', seconds=5)
 
         scheduler.start()
 
