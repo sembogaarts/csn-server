@@ -1,4 +1,5 @@
 from classes.light import Light
+from classes.buzzer import Buzzer
 from classes.database import Database
 from threading import Timer
 import time
@@ -7,6 +8,7 @@ class Alarm:
 
     def __init__(self):
         self.light = Light()
+        self.buzzer = Buzzer()
 
     def boot(self):
         self.light.on(self.light.red)
@@ -56,7 +58,9 @@ class Alarm:
 
     def start(self):
         self.light.on(self.light.red)
+        self.buzzer.on()
 
     def stop(self):
+        self.buzzer.off()
         self.light.off(self.light.red)
         self.light.off(self.light.yellow)
