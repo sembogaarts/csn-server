@@ -20,12 +20,12 @@ class Light:
         GPIO.setup(self.red, GPIO.OUT)
 
     def on(self, light):
-        print("power on for GPIO " + str(self.GPIOPin))
+        print("power on for GPIO " + str(light))
         GPIO.output(light, True)
         self.state = True
 
     def off(self, light):
-        print("power off for GPIO " + str(self.GPIOPin))
+        print("power off for GPIO " + str(light))
         GPIO.output(light, False)
         self.state = False
 
