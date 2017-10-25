@@ -22,7 +22,6 @@ socketio = SocketIO(app)
 alarm = Alarm()
 alarm.boot()
 
-
 @app.route('/', methods=['GET'])
 def start():
     if User.isLoggedIn():
