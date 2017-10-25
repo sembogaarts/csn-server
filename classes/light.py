@@ -11,9 +11,9 @@ class Light:
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         # Define lights
-        self.green = str(config.get('LIGHTS', 'green'))
-        self.yellow = str(config.get('LIGHTS', 'yellow'))
-        self.red = str(config.get('LIGHTS', 'red'))
+        self.green = int(config.get('LIGHTS', 'green'))
+        self.yellow = int(config.get('LIGHTS', 'yellow'))
+        self.red = int(config.get('LIGHTS', 'red'))
         # Setup Lights
         GPIO.setup(self.green, GPIO.OUT)
         GPIO.setup(self.yellow, GPIO.OUT)
