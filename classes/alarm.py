@@ -1,7 +1,7 @@
 from classes.light import Light
-from classes.client import Client
+from classes.database import Database
+from threading import Timer
 import time
-from apscheduler.schedulers.background import BlockingScheduler
 
 class Alarm:
 
@@ -17,26 +17,30 @@ class Alarm:
         self.light.off(self.light.yellow)
         self.light.off(self.light.green)
         self.check()
-        # scheduler = BlockingScheduler()
-        #
-        # alarmSwitch = scheduler.add_job(self.check, 'interval', seconds=5)
-        #
-        # scheduler.start()
+
+    def clientsAreOnline(self):
+        # Create DB Instance
+        db = Database()
+        # Check if there are any clients offline
+        result = db.fetchAll("SELECT * FROM clients WHERE online = 0")
+        # Return the result
+        if result is None:
+            return True
+        else:
+            return False
 
     def check(self):
-        print('Checking clients...')
-        self.danger = False
-        self.clients = Client.all()
-        for client in self.clients:
-            if client['online'] == 0:
-                print('CLIENT ' + client['name'] + ' IS OFFLINE!')
-                self.danger = True
-        if self.danger:
-            self.start()
-        else:
-            print('All systems are neutral')
+        # Check if all the clients are online
+        if self.clientsAreOnline():
             self.stop()
+        else:
+            # Retry in 10 seconds before running the alarm...
+            Timer(10, self.waitToReconnect).start()
 
+    def waitToReconnect(self):
+        # Check if all the clients are online
+        if not self.clientsAreOnline():
+            self.start()
 
     def start(self):
         self.light.on(self.light.red)
