@@ -17,7 +17,7 @@ class Alarm:
         self.light.off(self.light.yellow)
         self.light.off(self.light.green)
 
-        self.heartbeat = Timer.start(5.0, self.check)
+        self.heartbeat = Timer(5.0, self.check)
         self.heartbeat.start()
 
     def check(self):
