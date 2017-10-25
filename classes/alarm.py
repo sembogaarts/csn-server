@@ -38,7 +38,6 @@ class Alarm:
             self.stop()
             try:
                 self.retryTimer.cancel()
-                self.light.off(self.light.yellow)
             except:
                 print('No instance')
             self.light.on(self.light.green)
@@ -60,3 +59,4 @@ class Alarm:
 
     def stop(self):
         self.light.off(self.light.red)
+        self.light.off(self.light.yellow)
