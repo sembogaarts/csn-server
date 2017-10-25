@@ -65,11 +65,13 @@ def show_client(client_id):
 
 @socketio.on('connect')
 def client_online():
+    alarm.check()
     client_id = request.args['client_id']
     Client.setOnline(client_id)
 
 @socketio.on('disconnect')
 def client_offline():
+    alarm.check()
     client_id = request.args['client_id']
     Client.setOffline(client_id)
 

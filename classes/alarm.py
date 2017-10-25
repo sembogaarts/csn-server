@@ -16,12 +16,12 @@ class Alarm:
         self.light.off(self.light.red)
         self.light.off(self.light.yellow)
         self.light.off(self.light.green)
-
-        scheduler = BlockingScheduler()
-
-        alarmSwitch = scheduler.add_job(self.check, 'interval', seconds=5)
-
-        scheduler.start()
+        self.check()
+        # scheduler = BlockingScheduler()
+        #
+        # alarmSwitch = scheduler.add_job(self.check, 'interval', seconds=5)
+        #
+        # scheduler.start()
 
     def check(self):
         print('Checking clients...')
