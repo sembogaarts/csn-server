@@ -29,6 +29,7 @@ class Alarm:
             return True
         else:
             print("[ALARM] Some clients seem to be offline, retrying...")
+            self.light.on(self.light.yellow)
             return False
 
     def check(self):
@@ -44,6 +45,8 @@ class Alarm:
         if not self.clientsAreOnline():
             print("[ALARM] Still no activity, running the alarm!")
             self.start()
+        # Turn off the yellow light
+        self.light.off(self.light.yellow)
 
     def start(self):
         self.light.on(self.light.red)
