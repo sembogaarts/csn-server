@@ -19,6 +19,8 @@ db = Database()
 socketio = SocketIO(app)
 
 # Init
+alarm = Alarm()
+alarm.start()
 
 
 @app.route('/', methods=['GET'])
