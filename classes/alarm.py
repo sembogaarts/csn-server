@@ -22,11 +22,13 @@ class Alarm:
         # Create DB Instance
         db = Database()
         # Check if there are any clients offline
-        result = db.fetchAll("SELECT * FROM clients WHERE online = 1")
+        result = db.fetchAll("SELECT * FROM clients WHERE online = 0")
         # Return the result
         if result is None:
+            print("[ALARM] All clients are up and running!")
             return True
         else:
+            print("[ALARM] Some clients seem to be offline, retrying...")
             return False
 
     def check(self):
@@ -40,6 +42,7 @@ class Alarm:
     def waitToReconnect(self):
         # Check if all the clients are online
         if not self.clientsAreOnline():
+            print("[ALARM] Still no activity, running the alarm!")
             self.start()
 
     def start(self):
