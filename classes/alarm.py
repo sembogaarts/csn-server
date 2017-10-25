@@ -22,7 +22,7 @@ class Alarm:
         # Create DB Instance
         db = Database()
         # Check if there are any clients offline
-        result = db.fetchAll("SELECT * FROM clients WHERE online = 0")
+        result = db.fetchAll("SELECT * FROM clients WHERE online = 1")
         # Return the result
         if result is None:
             return True
