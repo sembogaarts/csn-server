@@ -7,6 +7,7 @@ class Alarm:
 
     def __init__(self):
         self.light = Light()
+        self.retryTimer = Timer(10, self.waitToReconnect)
 
     def boot(self):
         self.light.on(self.light.red)
@@ -25,10 +26,10 @@ class Alarm:
         result = db.fetchAll("SELECT * FROM clients WHERE online = 0")
         # Return the result
         if len(result) == 0:
-            print("[ALARM] All clients are up and running!")
+            print("[ALARM] All clients are up and running")
             return True
         else:
-            print("[ALARM] Some clients seem to be offline, retrying...")
+            print("[ALARM] Some clients seem to be offline")
             self.light.on(self.light.yellow)
             return False
 
@@ -36,9 +37,13 @@ class Alarm:
         # Check if all the clients are online
         if self.clientsAreOnline():
             self.stop()
+            self.retryTimer.cancel()
+            self.light.off(self.light.yellow)
+            self.light.on(self.light.green)
         else:
             # Retry in 10 seconds before running the alarm...
-            Timer(10, self.waitToReconnect).start()
+            self.retryTimer.start()
+            self.light.off(self.light.green)
 
     def waitToReconnect(self):
         # Check if all the clients are online

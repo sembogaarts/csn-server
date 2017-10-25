@@ -69,10 +69,6 @@ def client_online():
     Client.setOnline(client_id)
     alarm.check()
 
-@socketio.on('reconnect')
-def client_reconnect():
-    print('device has been reconnected')
-
 @socketio.on('disconnect')
 def client_offline():
     client_id = request.args['client_id']
