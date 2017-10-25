@@ -23,10 +23,8 @@ class Alarm:
         db = Database()
         # Check if there are any clients offline
         result = db.fetchAll("SELECT * FROM clients WHERE online = 0")
-        print(result)
-
         # Return the result
-        if result is None:
+        if len(result) == 0:
             print("[ALARM] All clients are up and running!")
             return True
         else:
