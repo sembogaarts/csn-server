@@ -8,7 +8,6 @@ from classes.database import Database
 from classes.user import User
 from classes.client import Client
 from classes.alarm import Alarm
-from threading import Timer
 
 # Config
 app = Flask(__name__)

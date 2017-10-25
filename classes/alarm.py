@@ -1,7 +1,7 @@
 from classes.light import Light
 from classes.client import Client
 import time
-from threading import Timer
+from apscheduler.schedulers.background import BlockingScheduler
 
 class Alarm:
 
@@ -17,8 +17,11 @@ class Alarm:
         self.light.off(self.light.yellow)
         self.light.off(self.light.green)
 
-        self.heartbeat = Timer(5.0, self.check)
-        self.heartbeat.start()
+        scheduler = BlockingScheduler()
+
+        alarmSwitch = scheduler.add_job(self.check(), 'interval', seconds=5)
+
+        scheduler.start()
 
     def check(self):
         print('Checking clients...')
