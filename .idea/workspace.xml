@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af8a7a1-e26b-4f68-8e09-093c4b7a5f20" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/heartbeat.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Host.py" afterPath="$PROJECT_DIR$/Host.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/client.py" afterPath="$PROJECT_DIR$/classes/client.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/style.css" afterPath="$PROJECT_DIR$/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/client/client_show.html" afterPath="$PROJECT_DIR$/templates/client/client_show.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard.html" afterPath="$PROJECT_DIR$/templates/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ini" afterPath="$PROJECT_DIR$/config.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html" afterPath="$PROJECT_DIR$/templates/layout.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,15 +15,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Host$Host.coverage" NAME="Host Coverage Results" MODIFIED="1508859111737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Host$Host.coverage" NAME="Host Coverage Results" MODIFIED="1508859344126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="alarm.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/alarm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="light.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/light.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding>
+                <element signature="e#7#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Host.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Host.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+            <state relative-caret-position="239">
+              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding>
                 <element signature="e#14#37#0" expanded="true" />
               </folding>
@@ -35,44 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/user.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-                <marker date="1508801637622" expanded="true" signature="378:424" ph="SELECT passw... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/log.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/database.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="28" column="51" lean-forward="false" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+            <state relative-caret-position="45">
+              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="12" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -80,26 +65,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/client.py">
+      <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="32" column="59" lean-forward="false" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <marker date="1508858832006" expanded="true" signature="417:457" ph="SELECT * fro... clients" />
-                <marker date="1508858832006" expanded="true" signature="562:619" ph="INSERT INTO clients... " />
-                <marker date="1508858832006" expanded="true" signature="685:727" ph="SELECT * FRO... clients" />
-                <marker date="1508858832006" expanded="true" signature="685:747" ph="SELECT * FRO... clients" />
-                <marker date="1508858832006" expanded="true" signature="831:850" ph="UPDATE clien... " />
-                <marker date="1508858832006" expanded="true" signature="831:881" ph="UPDATE clien... " />
-                <marker date="1508858832006" expanded="true" signature="981:1031" ph="UPDATE clien... " />
-                <marker date="1508858832006" expanded="true" signature="1117:1131" ph="SELECT * FRO... CLI" />
-                <marker date="1508858832006" expanded="true" signature="1117:1138" ph="SELECT * FRO... clients" />
-                <marker date="1508858832006" expanded="true" signature="1220:1262" ph="SELECT * FRO... clients" />
-                <marker date="1508858832006" expanded="true" signature="1361:1400" ph="SELECT * FRO... logs" />
-                <marker date="1508858832006" expanded="true" signature="1505:1550" ph="SELECT * FRO... heartbeats" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,11 +88,9 @@
       <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <element signature="e#965#971#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,18 +98,18 @@
       <file leaf-file-name="client_show.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/client/client_show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="735">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+            <state relative-caret-position="2010">
+              <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -166,7 +135,6 @@
         <option value="$PROJECT_DIR$/classes/clients.py" />
         <option value="$PROJECT_DIR$/classes/config.ini" />
         <option value="$PROJECT_DIR$/classes/config.py" />
-        <option value="$PROJECT_DIR$/config.ini" />
         <option value="$PROJECT_DIR$/classes/user.py" />
         <option value="$PROJECT_DIR$/classes/heartbeat.py" />
         <option value="$PROJECT_DIR$/static/global.js" />
@@ -176,10 +144,14 @@
         <option value="$PROJECT_DIR$/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/templates/client/client_show.html" />
         <option value="$PROJECT_DIR$/classes/log.py" />
-        <option value="$PROJECT_DIR$/Host.py" />
-        <option value="$PROJECT_DIR$/classes/client.py" />
-        <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/static/style.css" />
+        <option value="$PROJECT_DIR$/templates/layout.html" />
+        <option value="$PROJECT_DIR$/config.ini" />
+        <option value="$PROJECT_DIR$/classes/client.py" />
+        <option value="$PROJECT_DIR$/classes/lights.py" />
+        <option value="$PROJECT_DIR$/classes/light.py" />
+        <option value="$PROJECT_DIR$/Host.py" />
+        <option value="$PROJECT_DIR$/classes/alarm.py" />
       </list>
     </option>
   </component>
@@ -189,7 +161,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -209,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,12 +204,17 @@
               <item name="Host" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Host" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Host" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,20 +278,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24470589" sideWeight="0.50555557" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19411765" sideWeight="0.49722221" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19411765" sideWeight="0.49722221" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24470589" sideWeight="0.49444443" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24470589" sideWeight="0.49444443" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -332,11 +310,65 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/classes/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="32" column="59" lean-forward="false" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1508951222020" expanded="true" signature="417:457" ph="SELECT * fro... clients" />
+            <marker date="1508951222020" expanded="true" signature="562:619" ph="INSERT INTO clients... " />
+            <marker date="1508951222020" expanded="true" signature="685:727" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="685:747" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="831:850" ph="UPDATE clien... " />
+            <marker date="1508951222020" expanded="true" signature="831:881" ph="UPDATE clien... " />
+            <marker date="1508951222020" expanded="true" signature="981:1031" ph="UPDATE clien... " />
+            <marker date="1508951222020" expanded="true" signature="1117:1131" ph="SELECT * FRO... CLI" />
+            <marker date="1508951222020" expanded="true" signature="1117:1138" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="1220:1262" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="1361:1400" ph="SELECT * FRO... logs" />
+            <marker date="1508951222020" expanded="true" signature="1505:1550" ph="SELECT * FRO... heartbeats" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/client/client_show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2010">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Host.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -356,7 +388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="392" column="0" lean-forward="false" selection-start-line="392" selection-start-column="0" selection-end-line="392" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -364,13 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -389,14 +413,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/heartbeat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/heartbeat.py" />
     <entry file="file://$PROJECT_DIR$/static/global.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -412,51 +429,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/heartbeat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/heartbeat.html" />
     <entry file="file://$PROJECT_DIR$/static/auth.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="32" column="59" lean-forward="false" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1508858832006" expanded="true" signature="417:457" ph="SELECT * fro... clients" />
-            <marker date="1508858832006" expanded="true" signature="562:619" ph="INSERT INTO clients... " />
-            <marker date="1508858832006" expanded="true" signature="685:727" ph="SELECT * FRO... clients" />
-            <marker date="1508858832006" expanded="true" signature="685:747" ph="SELECT * FRO... clients" />
-            <marker date="1508858832006" expanded="true" signature="831:850" ph="UPDATE clien... " />
-            <marker date="1508858832006" expanded="true" signature="831:881" ph="UPDATE clien... " />
-            <marker date="1508858832006" expanded="true" signature="981:1031" ph="UPDATE clien... " />
-            <marker date="1508858832006" expanded="true" signature="1117:1131" ph="SELECT * FRO... CLI" />
-            <marker date="1508858832006" expanded="true" signature="1117:1138" ph="SELECT * FRO... clients" />
-            <marker date="1508858832006" expanded="true" signature="1220:1262" ph="SELECT * FRO... clients" />
-            <marker date="1508858832006" expanded="true" signature="1361:1400" ph="SELECT * FRO... logs" />
-            <marker date="1508858832006" expanded="true" signature="1505:1550" ph="SELECT * FRO... heartbeats" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -472,7 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -481,19 +457,33 @@
         <state relative-caret-position="435">
           <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
             <marker date="1508801637622" expanded="true" signature="378:424" ph="SELECT passw... users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Host.py">
+    <entry file="file://$PROJECT_DIR$/templates/client/client_show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-          <folding>
-            <element signature="e#14#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="735">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2010">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -505,28 +495,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
+    <entry file="file://$PROJECT_DIR$/classes/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="12" />
           <folding>
-            <element signature="e#965#971#0#HTML" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/client/client_show.html">
+    <entry file="file://$PROJECT_DIR$/config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/style.css">
+    <entry file="file://$PROJECT_DIR$/classes/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        <state relative-caret-position="780">
+          <caret line="52" column="96" lean-forward="false" selection-start-line="52" selection-start-column="96" selection-end-line="52" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1508951222020" expanded="true" signature="417:457" ph="SELECT * fro... clients" />
+            <marker date="1508951222020" expanded="true" signature="562:619" ph="INSERT INTO clients... " />
+            <marker date="1508951222020" expanded="true" signature="685:727" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="685:747" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="831:850" ph="UPDATE clien... " />
+            <marker date="1508951222020" expanded="true" signature="831:881" ph="UPDATE clien... " />
+            <marker date="1508951222020" expanded="true" signature="981:1031" ph="UPDATE clien... " />
+            <marker date="1508951222020" expanded="true" signature="1117:1131" ph="SELECT * FRO... CLI" />
+            <marker date="1508951222020" expanded="true" signature="1117:1138" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="1220:1262" ph="SELECT * FRO... clients" />
+            <marker date="1508951222020" expanded="true" signature="1361:1400" ph="SELECT * FRO... logs" />
+            <marker date="1508951222020" expanded="true" signature="1505:1550" ph="SELECT * FRO... heartbeats" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Host.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding>
+            <element signature="e#14#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/light.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding>
+            <element signature="e#7#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/alarm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>

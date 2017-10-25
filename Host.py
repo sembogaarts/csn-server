@@ -7,14 +7,19 @@ from flask_socketio import SocketIO, emit
 from classes.database import Database
 from classes.user import User
 from classes.client import Client
+from classes.alarm import Alarm
+from threading import Timer
 
 # Config
 app = Flask(__name__)
-app.secret_key = 'visionbeta'
+app.secret_key = 'vision'
 
 # MySQL connection
 db = Database()
 socketio = SocketIO(app)
+
+# Init
+
 
 @app.route('/', methods=['GET'])
 def start():
