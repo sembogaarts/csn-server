@@ -7,7 +7,6 @@ class Alarm:
 
     def __init__(self):
         self.light = Light()
-        self.retryTimer = Timer(10, self.waitToReconnect)
 
     def boot(self):
         self.light.on(self.light.red)
@@ -43,7 +42,7 @@ class Alarm:
         else:
             # Retry in 10 seconds before running the alarm...
             self.light.off(self.light.green)
-            self.retryTimer.start()
+            self.retryTimer = Timer(10, self.waitToReconnect).start()
 
     def waitToReconnect(self):
         # Check if all the clients are online
