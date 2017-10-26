@@ -68,14 +68,14 @@ def show_client(client_id):
     return render_template('client/client_show.html', client=client, logs=logs)
 
 @app.route('/alarm', methods=['POST'])
-def alarm():
+def alarm_request():
     if request.form['go'] == 'off':
         alarm.stop()
         alarm.armed = False
     else:
         alarm.waitToReconnect()
         alarm.armed = True
-    return True
+    return
 
 @socketio.on('connect')
 def client_online():
