@@ -51,3 +51,7 @@ class Client:
     @staticmethod
     def getHeartbeats(client_id):
         return Database().fetchOne("SELECT * FROM heartbeats WHERE client_id = %s", [client_id])
+
+    @staticmethod
+    def resetClients():
+        return Database().update("UPDATE clients SET online = 0")

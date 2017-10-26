@@ -1,6 +1,7 @@
 from classes.light import Light
 from classes.buzzer import Buzzer
 from classes.database import Database
+from classes.client import Client
 from threading import Timer
 import time
 
@@ -11,6 +12,7 @@ class Alarm:
         self.buzzer = Buzzer()
 
     def boot(self):
+        Client.resetClients()
         self.light.on(self.light.red)
         self.light.on(self.light.yellow)
         self.light.on(self.light.green)
