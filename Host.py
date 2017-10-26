@@ -75,7 +75,7 @@ def alarm():
     else:
         alarm.waitToReconnect()
         alarm.armed = True
-    return render_template('client/client_show.html', client=client, logs=logs)
+    return True
 
 @socketio.on('connect')
 def client_online():
