@@ -67,3 +67,10 @@ class Alarm:
         self.buzzer.off()
         self.light.off(self.light.red)
         self.light.off(self.light.yellow)
+
+    def cancel(self):
+        try:
+            self.retryTimer.cancel()
+        except:
+            print('No instance')
+        self.stop()
