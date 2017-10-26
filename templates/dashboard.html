@@ -4,6 +4,14 @@
 
     <div class="container">
 
+        {% if showWarning %}
+
+        <div class="warning">
+            Klik hier om het alarm uit te zetten
+        </div>
+
+        {% endif %}
+
         <p class="divider">
             Clients
             <a class="btn right" href="/client/add">Toevoegen</a>

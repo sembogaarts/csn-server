@@ -10,6 +10,7 @@ class Alarm:
     def __init__(self):
         self.light = Light()
         self.buzzer = Buzzer()
+        self.armed = True
 
     def boot(self):
         Client.resetClients()

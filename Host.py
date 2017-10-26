@@ -25,7 +25,9 @@ alarm.boot()
 def start():
     if User.isLoggedIn():
         clients = Client.all()
-        return render_template('dashboard.html', clients=clients)
+        offlineClients = db.fetchAll("SELECT * FROM clients WHERE online = 0")
+        clientsOnline = len(offlineClients) == 0
+        return render_template('dashboard.html', clients=clients, showWarning=clientsOnline)
     else:
         return render_template('login.html')
 
