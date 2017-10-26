@@ -27,6 +27,10 @@ def start():
         clients = Client.all()
         offlineClients = db.fetchAll("SELECT * FROM clients WHERE online = 0")
         showWarning = len(offlineClients) > 0
+
+        print(offlineClients)
+        print(showWarning)
+
         return render_template('dashboard.html', clients=clients, showWarning=showWarning)
     else:
         return render_template('login.html')
