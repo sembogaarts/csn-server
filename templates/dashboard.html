@@ -6,9 +6,17 @@
 
         {% if showWarning %}
 
-        <div class="warning">
-            Klik hier om het alarm uit te zetten
-        </div>
+            <div class="warning">
+                Klik <span id="turnOffAlarm">hier</span> om het alarm uit te zetten
+            </div>
+
+        {% endif %}
+
+        {% if showStart %}
+
+            <div class="success">
+                Klik <span id="turnOnAlarm">hier</span> om het alarm aan te zetten
+            </div>
 
         {% endif %}
 

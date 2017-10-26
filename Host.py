@@ -29,7 +29,7 @@ def start():
         for client in clients:
             if client['online'] == 0:
                 showWarning = True
-        return render_template('dashboard.html', clients=clients, showWarning=showWarning)
+        return render_template('dashboard.html', clients=clients, showWarning=showWarning, showStart=alarm.armed)
     else:
         return render_template('login.html')
 
@@ -65,6 +65,16 @@ def add_client_view():
 def show_client(client_id):
     client = Client.get(client_id)
     logs = Client.getLogs(client_id)
+    return render_template('client/client_show.html', client=client, logs=logs)
+
+@app.route('/alarm', methods=['POST'])
+def alarm():
+    if request.form['go'] == 'off':
+        alarm.stop()
+        alarm.armed = False
+    else:
+        alarm.waitToReconnect()
+        alarm.armed = True
     return render_template('client/client_show.html', client=client, logs=logs)
 
 @socketio.on('connect')

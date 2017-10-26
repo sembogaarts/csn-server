@@ -19,4 +19,36 @@ $(document).ready(function() {
 
     })
 
+    $('#turnOffAlarm').click(function() {
+
+        data = {
+            go: 'off'
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/alarm",
+            data: data,
+            success: function(data) {
+                location.reload();
+            }
+        })
+    });
+
+    $('#turnOnAlarm').click(function() {
+
+        data = {
+            go: 'on'
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/alarm",
+            data: data,
+            success: function(data) {
+                location.reload();
+            }
+        })
+    });
+
 });
