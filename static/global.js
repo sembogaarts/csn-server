@@ -52,12 +52,10 @@ $(document).ready(function() {
     });
 
     $('#startAlarm').click(function() {
-        console.log($(this).attr('data-id'));
         data = {
             client_id: $(this).attr('data-id'),
             status: 'on'
         }
-        console.log(data);
         $.ajax({
             type: "POST",
             url: "/alarm/client",
@@ -68,12 +66,10 @@ $(document).ready(function() {
     });
 
     $('#stopAlarm').click(function() {
-        console.log($(this).attr('data-id'));
         data = {
             client_id: $(this).attr('data-id'),
             status: 'off'
         }
-        console.log(data);
         $.ajax({
             type: "POST",
             url: "/alarm/client",

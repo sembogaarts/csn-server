@@ -84,7 +84,7 @@ def alarm_request_client():
 
     print(request.args)
 
-    socketio.emit('alarm', request.args, room=socket.room(request.args['client_id']))
+    # socketio.emit('alarm', request.args, room=socket.room(request.args['client_id']))
 
     return str('OK')
 
