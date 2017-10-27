@@ -54,7 +54,9 @@ class Client:
     @staticmethod
     def all():
         clients = Database().fetchAll("SELECT * FROM clients")
+        print(clients)
         for i, row in enumerate(clients):
+            print(i)
             query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
             status = Database().fetchOne(query, [row['client_id']])
             clients[i]['status'] = status['status']
