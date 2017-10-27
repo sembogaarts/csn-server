@@ -51,27 +51,30 @@ def do_login():
 
 @app.route('/client/add', methods=['GET', 'POST'])
 def add_client_view():
+    # Check if it's a GET or POST request
     if request.method == 'GET':
         return render_template('client/client_add.html')
     else:
-        name = request.form['name']
+        # Add the client
         client = Client()
-        client.name = name
+        client.name = request.form['name']
         row = client.add()
         return jsonify(row)
 
 @app.route('/client/<client_id>', methods=['GET'])
 def show_client(client_id):
-    client = Client.get(client_id)
-    logs = Client.getLogs(client_id)
-    return render_template('client/client_show.html', client=client, logs=logs)
+    client = Client()
+    client.client_id = client_id
+    return render_template('client/client_show.html', client=client.get(), logs=client.logs())
 
 @app.route('/alarm', methods=['POST'])
 def alarm_request():
-    if request.form['go'] == 'off':
+    action = request.form['turn']
+    # Check what to do
+    if action == 'off':
         alarm.cancel()
         alarm.armed = False
-    else:
+    elif action == 'on':
         alarm.waitToReconnect()
         alarm.armed = True
     return str('OK')

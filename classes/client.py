@@ -36,21 +36,19 @@ class Client:
         query = "UPDATE clients SET online = 0 WHERE client_id = %s"
         return self.db.update(query, [client_id])
 
+    def get(self):
+        # SQL to get the client
+        query = "SELECT * FROM clients WHERE client_id = %s"
+        return self.db.fetchOne(query, [self.client_id])
+
+    def logs(self):
+        # SQL to get the client
+        query = "SELECT * FROM logs WHERE client_id = %s"
+        return self.db.fetchOne(query, [self.client_id])
+
     @staticmethod
     def all():
         return Database().fetchAll("SELECT * FROM clients")
-
-    @staticmethod
-    def get(client_id):
-        return Database().fetchOne("SELECT * FROM clients WHERE client_id = %s", [client_id])
-
-    @staticmethod
-    def getLogs(client_id):
-        return Database().fetchOne("SELECT * FROM logs WHERE client_id = %s", [client_id])
-
-    @staticmethod
-    def getHeartbeats(client_id):
-        return Database().fetchOne("SELECT * FROM heartbeats WHERE client_id = %s", [client_id])
 
     @staticmethod
     def resetClients():
