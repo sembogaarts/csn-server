@@ -43,9 +43,7 @@ class Client:
         # Get latest log
         query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
         status = self.db.fetchOne(query, [self.client_id])
-        client['status'] = status
-        print(client)
-        print(status)
+        client['status'] = status['status']
         return client
 
     def logs(self):
