@@ -78,9 +78,11 @@ def alarm_request():
 
 @app.route('/alarm/client', methods=['POST'])
 def alarm_request_client():
-
-    socketio.emit('alarm', request.form, room=socket.room(request.form['client_id']))
-
+    # Save variables
+    data = request.form
+    room = socket.room(request.form['client_id'])
+    # Send alarm request to specific client
+    socketio.emit('alarm', data, room=room)
     return str('OK')
 
 @socketio.on('connect')
@@ -108,7 +110,7 @@ def client_alarm(data):
     status = data['status']
     # Create log
     log = Log()
-    log.add(client_id, data['status'])
+    log.add(client_id, status)
 
 @app.route('/logout')
 def logout():

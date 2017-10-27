@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
     $('#clientAdd').submit(function(e) {
-
-        e.preventDefault()
-
+        // Disable default event
+        e.preventDefault();
+        // Hide the form
         $('div[data-step="1"]').hide();
-
+        // Perform a post request and show the result
         $.ajax({
             type: "POST",
             url: "/client/add",
@@ -15,68 +15,52 @@ $(document).ready(function() {
                 $('div[data-step="2"] span').text(data['name']);
                 $('div[data-step="2"]').show();
             }
-        })
-
+        });
     })
 
     $('#turnOffAlarm').click(function() {
-
-        data = {
-            go: 'off'
-        }
-
-        $.ajax({
-            type: "POST",
-            url: "/alarm",
-            data: data,
-            success: function(data) {
-                location.reload();
-            }
-        })
+        toggleServerAlarm({turn:'off'});
     });
 
     $('#turnOnAlarm').click(function() {
+        toggleServerAlarm({turn:'on'});
+    });
 
-        data = {
-            go: 'on'
-        }
-
+    function toggleServerAlarm(data) {
         $.ajax({
             type: "POST",
             url: "/alarm",
             data: data,
-            success: function(data) {
+            success: function() {
                 location.reload();
             }
-        })
-    });
+        });
+    }
 
     $('#startAlarm').click(function() {
         data = {
             client_id: $(this).attr('data-id'),
             status: 1
-        }
-        $.ajax({
-            type: "POST",
-            url: "/alarm/client",
-            data: data,
-            success: function(data) {
-            }
-        })
+        };
+        toggleClientAlarm(data);
     });
 
     $('#stopAlarm').click(function() {
         data = {
             client_id: $(this).attr('data-id'),
             status: 0
-        }
+        };
+        toggleClientAlarm(data);
+    });
+
+    function toggleClientAlarm(data) {
         $.ajax({
             type: "POST",
             url: "/alarm/client",
             data: data,
             success: function(data) {
             }
-        })
-    });
+        });
+    }
 
 });
