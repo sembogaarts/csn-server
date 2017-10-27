@@ -53,15 +53,28 @@ class Client:
 
     @staticmethod
     def all():
+
+
         clients = Database().fetchAll("SELECT * FROM clients")
-        print(clients)
-        for i, row in enumerate(clients):
-            print(i)
-            print(clients[i])
+
+        temp = []
+
+        for row in clients:
+
+            client = {}
+
+            client.update(row)
+
+
+
             query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
             status = Database().fetchOne(query, [row['client_id']])
-            # clients[i].update({'status': status['status']})
-            clients[i].update({'id': 1})
+            clients.update({'status': status['status']})
+
+            temp.append(client)
+
+        print(temp)
+
         return clients
 
     @staticmethod
