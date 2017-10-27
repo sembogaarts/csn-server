@@ -57,6 +57,7 @@ class Client:
         print(clients)
         for i, row in enumerate(clients):
             print(i)
+            print(clients[i])
             query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
             status = Database().fetchOne(query, [row['client_id']])
             clients[i].update({'status': status['status']})
