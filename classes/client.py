@@ -57,7 +57,7 @@ class Client:
         clients = Database().fetchAll("SELECT * FROM clients")
         for client in clients:
             query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
-            status = Database().fetchOne(query, [client['client+id']])
+            status = Database().fetchOne(query, [client['client_id']])
             client['status'] = status['status']
         return clients
 
