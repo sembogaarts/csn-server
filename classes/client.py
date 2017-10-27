@@ -44,7 +44,6 @@ class Client:
         query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
         status = self.db.fetchOne(query, [self.client_id])
         client['status'] = status['status']
-        print(client)
         return client
 
     def logs(self):
@@ -55,11 +54,10 @@ class Client:
     @staticmethod
     def all():
         clients = Database().fetchAll("SELECT * FROM clients")
-        for row in clients:
+        for i, row in enumerate(clients):
             query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
             status = Database().fetchOne(query, [row['client_id']])
-
-            row['status'] = status['status']
+            clients[i]['status'] = status['status']
         return clients
 
     @staticmethod
