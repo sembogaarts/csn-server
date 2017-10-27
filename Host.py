@@ -84,9 +84,8 @@ def alarm_request_client():
     return str('OK')
 
 @socketio.on('connect')
-def client_online(test):
+def client_online():
 
-    print(test)
     print(request.args)
 
     client_id = request.args['client_id']
