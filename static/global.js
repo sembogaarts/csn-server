@@ -54,7 +54,7 @@ $(document).ready(function() {
     $('#startAlarm').click(function() {
         data = {
             client_id: $(this).attr('data-id'),
-            status: 'on'
+            status: 1
         }
         $.ajax({
             type: "POST",
@@ -68,7 +68,7 @@ $(document).ready(function() {
     $('#stopAlarm').click(function() {
         data = {
             client_id: $(this).attr('data-id'),
-            status: 'off'
+            status: 0
         }
         $.ajax({
             type: "POST",
