@@ -33,7 +33,10 @@
                     <div class="card">
 
                         <h2 class="title">
-                            {{ client['name'] }} {{ client['status'] }}
+                            {{ client['name'] }}
+                            {% if client['status'] == 3 %}
+                                <i class="fa fa-bell " aria-hidden="true"></i>
+                            {% endif %}
                         </h2>
                         <table>
                             <tbody>

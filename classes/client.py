@@ -57,7 +57,6 @@ class Client:
         for row in clients:
             query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
             status = Database().fetchOne(query, [row['client_id']])
-            print(status)
             if status != None:
                 row['status'] = status['status']
         return clients
