@@ -89,25 +89,20 @@ def alarm_request_client():
 
 @socketio.on('connect')
 def client_online():
-
     # Save variables
     client_id = request.args['client_id']
-
     # Add client to list
     socket.add(request.sid, client_id)
-
+    # Recheck the alarm
     alarm.check()
 
 @socketio.on('disconnect')
 def client_offline():
-
     # Save variables
     client_id = request.args['client_id']
-
     # Add client to list
     socket.remove(client_id)
-
-    Client.setOffline(client_id)
+    # Recheck the alarm
     alarm.check()
 
 @socketio.on('alarm')
