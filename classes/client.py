@@ -60,7 +60,8 @@ class Client:
             print(clients[i])
             query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
             status = Database().fetchOne(query, [row['client_id']])
-            clients[i].update({'status': status['status']})
+            # clients[i].update({'status': status['status']})
+            clients[i].update({'id': 1})
         return clients
 
     @staticmethod
