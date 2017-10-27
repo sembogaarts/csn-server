@@ -8,17 +8,19 @@ from classes.database import Database
 from classes.user import User
 from classes.client import Client
 from classes.alarm import Alarm
+from classes.socket import Socket
 
 # Config
 app = Flask(__name__)
 app.secret_key = 'vision'
 
-# MySQL connection
+# Create instances
 db = Database()
+socket = Socket()
 socketio = SocketIO(app)
-
-# Init
 alarm = Alarm()
+
+
 alarm.boot()
 
 @app.route('/', methods=['GET'])
@@ -80,16 +82,19 @@ def alarm_request():
 @app.route('/alarm/client', methods=['POST'])
 def alarm_request_client():
 
-    socketio.emit('alarm', request.form)
+    socketio.emit('alarm', request.args, room=socket.room(request.args['client_id']))
+
     return str('OK')
 
 @socketio.on('connect')
 def client_online():
 
-    print(request.args)
-    print(request.sid)
-
+    # Save variables
     client_id = request.args['client_id']
+
+    # Add client to list
+    socket.add(request.sid, client_id)
+
     Client.setOnline(client_id)
     alarm.check()
 
