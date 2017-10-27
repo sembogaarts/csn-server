@@ -12,7 +12,9 @@
 
             <h2 class="title">
                 {{ client['name'] }}
-                {% if client['status'] == 3 %}
+                {% if client['status'] == 2 %}
+                    <i class="fa fa-exclamation" aria-hidden="true"></i>
+                {% elif client['status'] == 3 %}
                     <i class="fa fa-bell " aria-hidden="true"></i>
                 {% endif %}
                 <i id="stopAlarm" data-id="{{ client['client_id'] }}" class="fa fa-stop right" aria-hidden="true"></i>
