@@ -78,7 +78,7 @@ def alarm_request():
     return str('OK')
 
 @app.route('/alarm/client', methods=['POST'])
-def alarm_request():
+def alarm_request_client():
     socketio.emit('alarm', request.form)
     return str('OK')
 
