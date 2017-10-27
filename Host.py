@@ -87,6 +87,7 @@ def alarm_request_client():
 def client_online():
 
     print(request.args)
+    print(request.sid)
 
     client_id = request.args['client_id']
     Client.setOnline(client_id)
