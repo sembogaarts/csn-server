@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     $('#startAlarm').click(function() {
         data = {
-            client_id: $(this).attr('data-id'),
+            // client_id: $(this).attr('data-id'),
             status: 1
         }
         $.ajax({
@@ -67,7 +67,7 @@ $(document).ready(function() {
 
     $('#stopAlarm').click(function() {
         data = {
-            client_id: $(this).attr('data-id'),
+            // client_id: $(this).attr('data-id'),
             status: 0
         }
         $.ajax({
