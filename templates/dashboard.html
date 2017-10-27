@@ -39,7 +39,6 @@
                             <tbody>
                             <tr>
                                 <td><h3>Code: {{ client['client_id'] }}</h3></td>
-                                <td><h3>Logs: 40</h3></td>
                             </tr>
                             <tr>
                                 <td>
@@ -49,16 +48,6 @@
                                             <span class="offline">Offline</span>
                                         {% else %}
                                             <span class="online">Online</span>
-                                        {% endif %}
-                                    </h3>
-                                </td>
-                                <td>
-                                    <h3>
-                                        Modus:
-                                        {% if client['online'] == 0 %}
-                                            <span>Gepauzeerd</span>
-                                        {% else %}
-                                            <span>Actief</span>
                                         {% endif %}
                                     </h3>
                                 </td>
