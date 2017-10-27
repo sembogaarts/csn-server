@@ -1,27 +1,23 @@
 # Third Party
 from flask import Flask
 from flask import render_template, redirect, request, flash, session, url_for, jsonify
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO
 
 # Classes
-from classes.database import Database
 from classes.user import User
 from classes.client import Client
 from classes.alarm import Alarm
 from classes.socket import Socket
+from classes.log import Log
 
 # Config
 app = Flask(__name__)
 app.secret_key = 'vision'
 
 # Create instances
-db = Database()
 socket = Socket()
 socketio = SocketIO(app)
 alarm = Alarm()
-
-# Boot the alarm
-alarm.boot()
 
 @app.route('/', methods=['GET'])
 def start():
@@ -88,7 +84,7 @@ def alarm_request_client():
     return str('OK')
 
 @socketio.on('connect')
-def client_online():
+def socket_connect():
     # Save variables
     client_id = request.args['client_id']
     # Add client to list
@@ -97,7 +93,7 @@ def client_online():
     alarm.check()
 
 @socketio.on('disconnect')
-def client_offline():
+def socket_disconnect():
     # Save variables
     client_id = request.args['client_id']
     # Add client to list
@@ -107,7 +103,12 @@ def client_offline():
 
 @socketio.on('alarm')
 def client_alarm(data):
-    print(str(data))
+    # Save variables
+    client_id = request.args['client_id']
+    status = data['status']
+    # Create log
+    log = Log()
+    log.add(client_id, data['status'])
 
 @app.route('/logout')
 def logout():

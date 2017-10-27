@@ -22,6 +22,7 @@ class Alarm:
         self.light.off(self.light.yellow)
         self.light.off(self.light.green)
         self.check()
+        self.boot()
 
     def clientsAreOnline(self):
         # Create DB Instance
