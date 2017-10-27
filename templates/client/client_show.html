@@ -11,7 +11,7 @@
         <div class="card">
 
             <h2 class="title">
-                {{ client['name'] }}
+                {{ client['name'] }} {{ client['status'] }}
                 <i id="stopAlarm" data-id="{{ client['client_id'] }}" class="fa fa-stop right" aria-hidden="true"></i>
                 <i id="startAlarm" data-id="{{ client['client_id'] }}" class="fa fa-play right" aria-hidden="true"></i>
                 <i id="triggerAlarm" data-id="{{ client['client_id'] }}" class="fa fa-exclamation-triangle right" aria-hidden="true"></i>
