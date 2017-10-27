@@ -54,15 +54,14 @@ $(document).ready(function() {
     $('#startAlarm').click(function() {
         console.log($(this).attr('data-id'));
         data = {
-            id: $(this).attr('data-id'),
-            go: 'on'
+            client_id: $(this).attr('data-id'),
+            status: 'on'
         }
         $.ajax({
             type: "POST",
             url: "/alarm/client",
             data: data,
             success: function(data) {
-                location.reload();
             }
         })
     });
@@ -70,15 +69,14 @@ $(document).ready(function() {
     $('#stopAlarm').click(function() {
         console.log($(this).attr('data-id'));
         data = {
-            id: $(this).attr('data-id'),
-            go: 'off'
+            client_id: $(this).attr('data-id'),
+            status: 'off'
         }
         $.ajax({
             type: "POST",
             url: "/alarm/client",
             data: data,
             success: function(data) {
-                location.reload();
             }
         })
     });
