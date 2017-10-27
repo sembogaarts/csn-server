@@ -84,6 +84,7 @@ $(document).ready(function() {
                   'Het alarmsysteem is op de client ' + status +  '.',
                   'success'
                 );
+                location.reload();
             }
         });
     }
