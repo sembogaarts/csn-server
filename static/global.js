@@ -51,4 +51,34 @@ $(document).ready(function() {
         })
     });
 
+    $('#startAlarm').click(function() {
+        console.log($(this).attr('data-id'));
+        data = {
+            id: $(this).attr('data-id')
+        }
+        $.ajax({
+            type: "POST",
+            url: "/alarm/client",
+            data: data,
+            success: function(data) {
+                location.reload();
+            }
+        })
+    });
+
+    $('#stopAlarm').click(function() {
+        console.log($(this).attr('data-id'));
+        data = {
+            id: $(this).attr('data-id')
+        }
+        $.ajax({
+            type: "POST",
+            url: "/alarm/client",
+            data: data,
+            success: function(data) {
+                location.reload();
+            }
+        })
+    });
+
 });
