@@ -60,7 +60,7 @@ $(document).ready(function() {
             data: data,
             success: function(data) {
                 // Choose a word depending on status
-                status = data['status'] == 0 ? 'uitgezet' : 'aangezet';
+                status = data['status'] == '0' ? 'uitgezet' : 'aangezet';
                 // Give feedback to the user
                 swal(
                   'Success!',
