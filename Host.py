@@ -85,7 +85,8 @@ def alarm_request_client():
 
     print('SENDING TO ' + str(request.form['client_id']) + ' DATA: ' + str(request.form))
 
-    socketio.emit('alarm', request.form, room=socket.room(request.form['client_id']))
+    # socketio.emit('alarm', request.form, room=socket.room(request.form['client_id']))
+    socketio.emit('alarm', request.form)
 
     return str('OK')
 
