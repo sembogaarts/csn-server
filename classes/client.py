@@ -3,12 +3,10 @@ from classes.database import Database
 
 class Client:
 
-    db = Database()
-    name = None
-    client_id = None
-
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.db = Database()
+        self.name = None
+        self.client_id = None
 
     def add(self):
 
@@ -28,13 +26,15 @@ class Client:
 
         return self.db.fetchOne("SELECT * FROM clients WHERE client_id = %s", [self.client_id])
 
-    @staticmethod
-    def setOnline(client_id):
-        return Database().update("UPDATE clients SET online = 1 WHERE client_id = %s", [client_id])
+    def setOnline(self, client_id):
+        # SQL to update clients
+        query = "UPDATE clients SET online = 1 WHERE client_id = %s"
+        return self.db.update(query, [client_id])
 
-    @staticmethod
-    def setOffline(client_id):
-        return Database().update("UPDATE clients SET online = 0 WHERE client_id = %s", [client_id])
+    def setOffline(self, client_id):
+        # SQL to update clients
+        query = "UPDATE clients SET online = 0 WHERE client_id = %s"
+        return self.db.update(query, [client_id])
 
     @staticmethod
     def all():

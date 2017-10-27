@@ -20,7 +20,7 @@ socket = Socket()
 socketio = SocketIO(app)
 alarm = Alarm()
 
-
+# Boot the alarm
 alarm.boot()
 
 @app.route('/', methods=['GET'])
@@ -59,7 +59,8 @@ def add_client_view():
         return render_template('client/client_add.html')
     else:
         name = request.form['name']
-        client = Client(name)
+        client = Client()
+        client.name = name
         row = client.add()
         return jsonify(row)
 
@@ -95,12 +96,17 @@ def client_online():
     # Add client to list
     socket.add(request.sid, client_id)
 
-    Client.setOnline(client_id)
     alarm.check()
 
 @socketio.on('disconnect')
 def client_offline():
+
+    # Save variables
     client_id = request.args['client_id']
+
+    # Add client to list
+    socket.remove(client_id)
+
     Client.setOffline(client_id)
     alarm.check()
 
