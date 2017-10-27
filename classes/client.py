@@ -39,7 +39,12 @@ class Client:
     def get(self):
         # SQL to get the client
         query = "SELECT * FROM clients WHERE client_id = %s"
-        return self.db.fetchOne(query, [self.client_id])
+        client = self.db.fetchOne(query, [self.client_id])
+        # Get latest log
+        query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
+        status = self.db.fetchOne(query, [self.client_id])
+        client['status'] = status
+        return client
 
     def logs(self):
         # SQL to get the client
