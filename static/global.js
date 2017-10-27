@@ -69,13 +69,13 @@ $(document).ready(function() {
             success: function() {
                 // Choose a word depending on status
                 switch(data.status) {
-                    case '0':
+                    case 0:
                         status = 'uitgezet';
                         break;
-                    case '1':
+                    case 1:
                         status = 'aangezet';
                         break;
-                    case '2':
+                    case 2:
                         status = 'aangezet, en geactiveerd'
                 }
                 // Give feedback to the user
