@@ -14,7 +14,7 @@
                 {{ client['name'] }}
                 <i id="stopAlarm" data-id="{{ client['client_id'] }}" class="fa fa-stop right" aria-hidden="true"></i>
                 <i id="startAlarm" data-id="{{ client['client_id'] }}" class="fa fa-play right" aria-hidden="true"></i>
-                <i id="startAlarm" data-id="{{ client['client_id'] }}" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <i id="triggerAlarm" data-id="{{ client['client_id'] }}" class="fa fa-exclamation-triangle right" aria-hidden="true"></i>
             </h2>
             <table>
                 <tbody>
@@ -60,7 +60,17 @@
             {% for log in logs %}
 
                 <div class="card">
-                    {{ log['status'] }}
+
+                    {% if log['status'] == 0 %}
+                        <p>Het systeem is uitgeschakeld</p>
+                    {% elif log['status'] == 1 %}
+                        <p>Het systeem is ingeschakeld</p>
+                    {% elif log['status'] == 2 %}
+                        <p>Het systeem geeft aan dat het alarm afgaat</p>
+                    {% else %}
+                        <p>Het systeem heeft het alarm uitgezet</p>
+                    {% endif %}
+
                 </div>
 
             {% endfor %}

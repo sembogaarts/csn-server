@@ -53,6 +53,14 @@ $(document).ready(function() {
         toggleClientAlarm(data);
     });
 
+    $('#triggerAlarm').click(function() {
+        data = {
+            client_id: $(this).attr('data-id'),
+            status: 2
+        };
+        toggleClientAlarm(data);
+    });
+
     function toggleClientAlarm(data) {
         $.ajax({
             type: "POST",
@@ -60,10 +68,16 @@ $(document).ready(function() {
             data: data,
             success: function() {
                 // Choose a word depending on status
-                console.log(data)
-                console.log(data.status == 0)
-                console.log(data.status == '0')
-                status = data.status == '0' ? 'uitgezet' : 'aangezet';
+                switch(data.status) {
+                    case '0':
+                        status = 'uitgezet';
+                        break;
+                    case '1':
+                        status = 'aangezet';
+                        break;
+                    case '2':
+                        status = 'aangezet, en geactiveerd'
+                }
                 // Give feedback to the user
                 swal(
                   'Success!',

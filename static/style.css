@@ -102,14 +102,22 @@ a {
     float: left;
 }
 
-.fa-play {
+.fa-exclamation-triangle,
+.fa-play,
+.fa-stop {
     cursor: pointer;
+}
+
+.fa-play {
     color: #5fcf80;
 }
 
 .fa-stop {
-    cursor: pointer;
     color: #F44336;
+}
+
+.fa-exclamation-triangle {
+    color: #FFEB3B;
 }
 
 .online,
