@@ -58,7 +58,7 @@ $(document).ready(function() {
             type: "POST",
             url: "/alarm/client",
             data: data,
-            success: function(data) {
+            success: function() {
                 // Choose a word depending on status
                 console.log(data)
                 console.log(data.status == 0)
