@@ -59,9 +59,12 @@ $(document).ready(function() {
             url: "/alarm/client",
             data: data,
             success: function(data) {
+                // Choose a word depending on status
+                status = data['status'] == 0 ? 'uitgezet' : 'aangezet';
+                // Give feedback to the user
                 swal(
-                  'Good job!',
-                  'You clicked the button!',
+                  'Success!',
+                  'Het alarmsysteem is op de client ' + status +  '.',
                   'success'
                 );
             }
