@@ -56,7 +56,7 @@ $(document).ready(function() {
     $('#triggerAlarm').click(function() {
         data = {
             client_id: $(this).attr('data-id'),
-            status: 2
+            status: 3
         };
         toggleClientAlarm(data);
     });
@@ -75,7 +75,7 @@ $(document).ready(function() {
                     case 1:
                         status = 'aangezet';
                         break;
-                    case 2:
+                    case 3:
                         status = 'aangezet, en geactiveerd'
                 }
                 // Give feedback to the user
