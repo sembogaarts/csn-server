@@ -8,6 +8,7 @@ Dit is de server van het alarm systeem
 
 ### GitHub
 Ik heb de repository public gezet zodat u gemakkelijk bij de code kan, tevens staat de code ook op de bijgeleverde zip.
+https://github.com/sembogaarts/csn-server/tree/sockets
 
 ### Uitvoeren
 * Clone of zet de bestanden in een map
