@@ -58,9 +58,9 @@
                         {% elif log['status'] == 1 %}
                             <p>Het systeem is ingeschakeld</p>
                         {% elif log['status'] == 2 %}
+                            <p>Het systeem geeft aan dat er een sensor is geactiveerd</p>
+                        {% elif log['status'] == 3 %}
                             <p>Het systeem geeft aan dat het alarm afgaat</p>
-                        {% else %}
-                            <p>Het systeem heeft het alarm uitgezet</p>
                         {% endif %}
                     </p>
                 </div>
