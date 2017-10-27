@@ -57,6 +57,7 @@ $(document).ready(function() {
             client_id: $(this).attr('data-id'),
             status: 'on'
         }
+        console.log(data);
         $.ajax({
             type: "POST",
             url: "/alarm/client",
@@ -72,6 +73,7 @@ $(document).ready(function() {
             client_id: $(this).attr('data-id'),
             status: 'off'
         }
+        console.log(data);
         $.ajax({
             type: "POST",
             url: "/alarm/client",
