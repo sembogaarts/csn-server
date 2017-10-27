@@ -77,6 +77,11 @@ def alarm_request():
         alarm.armed = True
     return str('OK')
 
+@app.route('/alarm/client', methods=['POST'])
+def alarm_request():
+    socketio.emit('alarm', request.form)
+    return str('OK')
+
 @socketio.on('connect')
 def client_online():
     client_id = request.args['client_id']
@@ -88,6 +93,10 @@ def client_offline():
     client_id = request.args['client_id']
     Client.setOffline(client_id)
     alarm.check()
+
+@socketio.on('alarm')
+def client_alarm(data):
+    print(str(data))
 
 @app.route('/logout')
 def logout():

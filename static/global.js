@@ -54,7 +54,8 @@ $(document).ready(function() {
     $('#startAlarm').click(function() {
         console.log($(this).attr('data-id'));
         data = {
-            id: $(this).attr('data-id')
+            id: $(this).attr('data-id'),
+            go: 'on'
         }
         $.ajax({
             type: "POST",
@@ -69,7 +70,8 @@ $(document).ready(function() {
     $('#stopAlarm').click(function() {
         console.log($(this).attr('data-id'));
         data = {
-            id: $(this).attr('data-id')
+            id: $(this).attr('data-id'),
+            go: 'off'
         }
         $.ajax({
             type: "POST",
