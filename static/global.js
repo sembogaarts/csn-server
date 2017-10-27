@@ -32,11 +32,6 @@ $(document).ready(function() {
             url: "/alarm",
             data: data,
             success: function() {
-                swal(
-                  'Good job!',
-                  'You clicked the button!',
-                  'success'
-                );
                 location.reload();
             }
         });
@@ -64,6 +59,11 @@ $(document).ready(function() {
             url: "/alarm/client",
             data: data,
             success: function(data) {
+                swal(
+                  'Good job!',
+                  'You clicked the button!',
+                  'success'
+                );
             }
         });
     }
