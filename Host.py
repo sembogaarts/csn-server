@@ -79,11 +79,16 @@ def alarm_request():
 
 @app.route('/alarm/client', methods=['POST'])
 def alarm_request_client():
+
     socketio.emit('alarm', request.form)
     return str('OK')
 
 @socketio.on('connect')
-def client_online():
+def client_online(test):
+
+    print(test)
+    print(request.args)
+
     client_id = request.args['client_id']
     Client.setOnline(client_id)
     alarm.check()
