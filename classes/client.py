@@ -43,7 +43,7 @@ class Client:
 
     def logs(self):
         # SQL to get the client
-        query = "SELECT * FROM logs WHERE client_id = %s"
+        query = "SELECT * FROM logs WHERE client_id = %s LIMIT 1"
         return self.db.fetchOne(query, [self.client_id])
 
     @staticmethod
