@@ -83,8 +83,7 @@ def alarm_request():
 def alarm_request_client():
 
 
-
-    socketio.emit('alarm', request.args, room=socket.room(request.form['client_id']))
+    socketio.emit('alarm', request.form, room=socket.room(request.form['client_id']))
 
     return str('OK')
 
