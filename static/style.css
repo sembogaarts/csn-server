@@ -102,12 +102,68 @@ a {
     float: left;
 }
 
-.fa-play {
+.fa-exclamation-triangle,
+.fa-play,
+.fa-stop {
     cursor: pointer;
+}
+
+.fa-play {
     color: #5fcf80;
 }
 
-.fa-stop {
-    cursor: pointer;
+.fa-stop,
+.fa-bell {
     color: #F44336;
+}
+
+.fa-exclamation-triangle,
+.fa-exclamation {
+    color: #FFEB3B;
+}
+
+.online,
+.offline {
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.online {
+    background-color: #5fcf80;
+}
+
+.offline {
+    background-color: #F44336;
+}
+
+.main-footer {
+    color: #E0E0E0;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 90%;
+    }
+}
+
+.warning {
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #F44336;
+}
+
+.success {
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #5fcf80;
+}
+
+.warning span,
+.success span {
+    cursor: pointer;
 }

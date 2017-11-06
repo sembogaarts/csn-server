@@ -3,12 +3,10 @@ from classes.database import Database
 
 class Client:
 
-    db = Database()
-    name = None
-    client_id = None
-
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.db = Database()
+        self.name = None
+        self.client_id = None
 
     def add(self):
 
@@ -28,18 +26,42 @@ class Client:
 
         return self.db.fetchOne("SELECT * FROM clients WHERE client_id = %s", [self.client_id])
 
+    def setOnline(self, client_id):
+        # SQL to update clients
+        query = "UPDATE clients SET online = 1 WHERE client_id = %s"
+        return self.db.update(query, [client_id])
+
+    def setOffline(self, client_id):
+        # SQL to update clients
+        query = "UPDATE clients SET online = 0 WHERE client_id = %s"
+        return self.db.update(query, [client_id])
+
+    def get(self):
+        # SQL to get the client
+        query = "SELECT * FROM clients WHERE client_id = %s"
+        client = self.db.fetchOne(query, [self.client_id])
+        # Get latest log
+        query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
+        status = self.db.fetchOne(query, [self.client_id])
+        if status != None:
+            client['status'] = status['status']
+        return client
+
+    def logs(self):
+        # SQL to get the client
+        query = "SELECT * FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 5"
+        return self.db.fetchAll(query, [self.client_id])
+
     @staticmethod
     def all():
-        return Database().fetchAll("SELECT * FROM clients")
+        clients = Database().fetchAll("SELECT * FROM clients")
+        for row in clients:
+            query = "SELECT status FROM logs WHERE client_id = %s ORDER BY id DESC LIMIT 1"
+            status = Database().fetchOne(query, [row['client_id']])
+            if status != None:
+                row['status'] = status['status']
+        return clients
 
     @staticmethod
-    def get(client_id):
-        return Database().fetchOne("SELECT * FROM clients WHERE client_id = %s", [client_id])
-
-    @staticmethod
-    def getLogs(client_id):
-        return Database().fetchOne("SELECT * FROM logs WHERE client_id = %s", [client_id])
-
-    @staticmethod
-    def getHeartbeats(client_id):
-        return Database().fetchOne("SELECT * FROM heartbeats WHERE client_id = %s", [client_id])
+    def resetClients():
+        return Database().update("UPDATE clients SET online = 0")
